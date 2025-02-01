@@ -1,0 +1,23 @@
+JWT_PUBLIC_KEY: 'IqUOLz39QJpKcXIH54VnMw'
+JWT_SECRET_KEY: 'mqWo_CZaO1GFbsH-O4-s3g'
+JWT_ALGORITHM: "HS256"
+ACCESS_MINUTES: 15
+REFRESH_DAYS: 14
+VERIFY_MINUTES: 10
+RESENDING_MINUTES: 1
+
+DB_ALCHEMY: 'postgresql+psycopg://login:password@localhost/library'
+DB_ALCHEMY_TEST: 'postgresql+psycopg://login:password@localhost/library_test'
+
+EMAIL_HOST: 'smtp.mail.ru'
+EMAIL_PORT: 465
+EMAIL_USERNAME: 'user@mail.ru'
+EMAIL_PASSWORD: 'password'
+EMAIL_FROM: 'user@mail.ru'
+
+DEFAULT_USERNAME: 'admin'
+DEFAULT_PASSWORD: 'adminadmin'
+DEFAULT_EMAIL: 'super_admin@example.com'
+
+SALT: 'aSdlEq12as'
+MAX_AMOUNT: 2 # максимальное кол-во книг, которые может взять читатель
