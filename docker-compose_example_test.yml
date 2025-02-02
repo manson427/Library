@@ -1,0 +1,25 @@
+
+services:
+  db_test:
+    image: postgres:17.2
+    container_name: db_test_app
+    expose:
+      - 5432
+    environment:
+      POSTGRES_USER: login
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: library_test
+    volumes:
+      - /home/data/postgresql_test:/var/lib/postgresql/data
+
+
+  app_test:
+    build:
+      context: .
+    environment:
+      FastAPI_CONFIG_FILE: settings.yml
+    container_name: app_test
+    restart: no
+    command: bash -c "pytest"
+    depends_on:
+      - db_test

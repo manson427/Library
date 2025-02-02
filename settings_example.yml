@@ -6,9 +6,11 @@ REFRESH_DAYS: 14
 VERIFY_MINUTES: 10
 RESENDING_MINUTES: 1
 
-DB_ALCHEMY: 'postgresql+psycopg://login:password@localhost/library'
-DB_ALCHEMY_TEST: 'postgresql+psycopg://login:password@localhost/library_test'
+DB_ECHO: False
+DB_ALCHEMY: 'postgresql+psycopg://login:password@db/library'
+DB_ALCHEMY_TEST: 'postgresql+psycopg://login:password@db_test/library_test'
 
+# не используется в данной версии проекта
 EMAIL_HOST: 'smtp.mail.ru'
 EMAIL_PORT: 465
 EMAIL_USERNAME: 'user@mail.ru'

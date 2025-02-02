@@ -6,6 +6,7 @@ from app.api.routers.author import author_router
 from app.api.routers.book import book_router
 from app.api.routers.genre import genre_router
 from app.api.routers.user import user_router
+from app.log.logger import logger
 
 
 app = FastAPI()
@@ -19,4 +20,5 @@ app.include_router(user_router)
 
 
 if __name__ == "__main__":
+    logger.info("Starting server...")
     uvicorn.run(app="main:app")

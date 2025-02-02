@@ -1,0 +1,27 @@
+
+services:
+  db:
+    image: postgres:17.2
+    container_name: db_app
+    expose:
+      - 5432
+    environment:
+      POSTGRES_USER: login
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: library
+    volumes:
+      - /home/data/postgresql:/var/lib/postgresql/data
+
+
+  app:
+    build:
+      context: .
+    environment:
+      FastAPI_CONFIG_FILE: settings.yml
+    container_name: app
+    restart: on-failure
+    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
