@@ -1,6 +1,7 @@
 /.idea
 /.venv/
 settings.yml
+docker-compose.yml
 /trash/
 /log/
 

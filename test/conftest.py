@@ -7,6 +7,12 @@ from fastapi.testclient import TestClient
 import pytest
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 
+import sys
+from os.path import dirname as d
+from os.path import abspath
+root_dir = d(d(abspath(__file__)))
+sys.path.append(root_dir)
+
 from app.config import settings, AlembicTestData
 from app.db.database import get_rep
 from app.db.repositories.repository import Repository

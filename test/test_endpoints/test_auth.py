@@ -10,7 +10,7 @@ global header_access_token, header_refresh_token
 
 # @pytest.mark.skip
 @pytest.mark.asyncio
-def test_register(client, create):
+async def test_register(client, create):
     response = client2.post(
         "/auth/register",
         json={
@@ -28,7 +28,7 @@ def test_register(client, create):
 
 # @pytest.mark.skip
 @pytest.mark.asyncio
-def test_login(client, create):
+async def test_login(client, create):
     headers = {'accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
     response = client.post(
         "/auth/login/",
@@ -59,7 +59,7 @@ def test_login(client, create):
 
 # @pytest.mark.skip
 @pytest.mark.asyncio
-def test_logout(client, create):
+async def test_logout(client, create):
     global header_access_token, header_refresh_token
     cookies = {
         'access_token': header_access_token,

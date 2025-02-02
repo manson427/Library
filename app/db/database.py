@@ -9,7 +9,7 @@ from fastapi import Depends
 
 engine = create_async_engine(
     url=settings.DB_ALCHEMY.get_secret_value(),
-    echo=True
+    echo=settings.DB_ECHO
 )
 
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)

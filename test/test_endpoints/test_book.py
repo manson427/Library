@@ -1,4 +1,5 @@
 import pytest
+from datetime import date, timedelta
 
 
 # @pytest.mark.skip
@@ -206,8 +207,8 @@ async def test_get_users(client, create, get_tokens, test_role, test_code, check
                     "id": 3,
                     "left_id": 2,
                     "right_id": 3,
-                    "get_at": "2025-01-22",
-                    "must_return_at": "2025-02-05",
+                    "get_at": str(date.today() - timedelta(days=10)),
+                    "must_return_at": str(date.today() - timedelta(days=10 - 14)),
                     "returned_at": None,
                     "returned": False
                 }

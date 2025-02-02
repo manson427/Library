@@ -18,6 +18,7 @@ class Settings(BaseModel):
     REFRESH_DAYS: int
     VERIFY_MINUTES: int
     RESENDING_MINUTES: int
+    DB_ECHO: bool
     DB_ALCHEMY: SecretStr
     DB_ALCHEMY_TEST: SecretStr
     EMAIL_HOST: str
@@ -30,6 +31,7 @@ class Settings(BaseModel):
     DEFAULT_EMAIL: EmailStr
     SALT: str
     MAX_AMOUNT: int
+
 
 
 def parse_settings() -> Settings:
