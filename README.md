@@ -15,7 +15,7 @@
 Клонируем репозиторий, переходим в него:
 ```
     git clone https://github.com/manson427/Library.git
-    cd TaskManager
+    cd Library
 ```
 
 В папке / находится файл settings_example.yml, который необходимо переименовать в settings.yml и заполнить собственными значениями;
